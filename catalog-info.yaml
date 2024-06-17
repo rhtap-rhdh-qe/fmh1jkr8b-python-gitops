@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: fmh1jkr8b-python-gitops
+  description: This is GitOps manifest for fmh1jkr8b-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: fmh1jkr8b-python
+    janus-idp.io/tekton: fmh1jkr8b-python 
+    backstage.io/kubernetes-id: fmh1jkr8b-python 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:fmh1jkr8b-python
